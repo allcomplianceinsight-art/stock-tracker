@@ -492,8 +492,6 @@ def fetch_stock_data(watchlist):
                 "Signal": "-",
                 "Name": "-",
             })
-    # Send one combined message if there are alerts
-    send_combined_notifications(notifications)
     
     df = pd.DataFrame(results)
     if not df.empty:
@@ -701,4 +699,5 @@ if not watchlist.empty:
                     st.plotly_chart(fig, use_container_width=True)
                 else:
                     st.warning(f"No data available for {company_name}")
+
 
